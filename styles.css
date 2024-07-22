@@ -1,0 +1,278 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(19, 19, 19);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 95%;
+    max-width: 1450px;
+    max-height: 95vh;
+}
+
+/* Map container styles */
+#map-container {
+    position: relative;
+    flex: 1 1 60vh; /* Flex to grow and shrink, initial height */
+    width: 100%;
+    height: 60vh; /* Default height for smaller screens */
+    border-right: none;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image is contained within the container */
+    border-radius: 10px 10px 0 0;
+}
+
+/* Spawn location styles */
+.spawn-location {
+    position: absolute;
+    width: 1%; /* Relative size for scalability */
+    height: 1%; /* Relative size for scalability */
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.spawn-location:hover {
+    transform: scale(1.2);
+}
+
+.anggolt {
+    background-color: white;
+}
+
+.inferno {
+    background-color: red;
+}
+
+.kiaron {
+    background-color: blue;
+}
+
+.grish {
+    background-color: yellow;
+}
+
+.countdown {
+    position: absolute;
+    top: 0;
+    left: -50%;
+    transform: translate(-50%, -100%);
+    background-color: white;
+    padding: 2px 5px;
+    border-radius: 5px;
+    display: none;
+    font-size: 0.75em;
+    color: #222;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.countdown.green {
+    background-color: green;
+    color: white;
+}
+
+.spawn-name {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: translate(0, -100%);
+    background-color: rgba(36, 36, 36, 0.7);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.75em;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.spawn-name.finished {
+    font-weight: bold;
+    color: rgb(248, 248, 248);
+}
+
+.spawn-location.active {
+    border-color: rgb(13, 172, 27);
+}
+
+/* Log container styles */
+#log-container {
+    width: 100%;
+    padding: 20px;
+    background-color: #2b2b2b;
+    overflow-y: auto;
+    max-height: 40vh;
+}
+
+#log-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#log-container li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #181818;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 0.875em;
+    color: #ffffff;
+}
+
+/* Media Queries */
+@media (min-width: 1200px) {
+    body {
+        font-size: 12px;
+    }
+
+    #container {
+        flex-direction: row;
+        height: 95%;
+    }
+
+    #map-container {
+        width: 70%;
+        height: 100%;
+        border-right: 2px solid #181818;
+    }
+
+    #map {
+        border-radius: 10px 0 0 10px;
+    }
+
+    #log-container {
+        width: 30%;
+        max-height: 100%;
+    }
+
+    #log-container li {
+        font-size: 1em;
+    }
+
+    .spawn-location {
+        width: 12px;
+        height: 12px;
+    }
+
+    .countdown, .spawn-name {
+        font-size: 0.875em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    body {
+        font-size: 10px;
+    }
+
+    #container {
+        flex-direction: row;
+        height: 95%;
+    }
+
+    #map-container {
+        width: 70%;
+        height: 100%;
+        border-right: 2px solid #181818;
+    }
+
+    #map {
+        border-radius: 10px 0 0 10px;
+    }
+
+    #log-container {
+        width: 30%;
+        max-height: 100%;
+    }
+
+    #log-container li {
+        font-size: 0.875em;
+    }
+
+    .spawn-location {
+        width: 2%;
+        height: 2%;
+    }
+
+    .countdown, .spawn-name {
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        font-size: 8px;
+        font-weight: 300;
+    }
+
+    #map-container {
+        width: 100%;
+        height: 100%;
+        border-right: 2px solid #181818;
+    }
+
+    .spawn-name {
+        font-size: 0.625em;
+    }
+
+    .countdown {
+        font-size: 0.625em;
+    }
+
+    #log-container li {
+        font-size: 0.75em;
+    }
+
+    .spawn-location {
+        width: 1%;
+        height: 1%;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        font-size: 8px;
+        font-weight: 200;
+    }
+
+    #map-container {
+        width: 100%;
+        height: 100%;
+        border-right: 2px solid #181818;
+    }
+
+    .spawn-name {
+        font-size: 0.5em;
+    }
+
+    .countdown {
+        font-size: 0.5em;
+    }
+
+    #log-container li {
+        font-size: 0.625em;
+    }
+
+    .spawn-location {
+        width: 1%;
+        height: 1%;
+    }
+}

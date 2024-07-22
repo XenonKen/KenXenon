@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Collaborative Map</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore-compat.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="map-container">
+            <img src="your-map-image.jpg" alt="Map" id="map">
+        </div>
+        <div id="log-container">
+            <ul id="log-list"></ul>
+        </div>
+    </div>
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyCalXkDPUcz9cK6a1ohIVARB0EsBNVZRtY",
+          authDomain: "finalbh-ab0da.firebaseapp.com",
+          projectId: "finalbh-ab0da",
+          storageBucket: "finalbh-ab0da.appspot.com",
+          messagingSenderId: "129058304851",
+          appId: "1:129058304851:web:3351184df08de6ec81a7a6",
+          measurementId: "G-0B34SP90FC"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+</body>
+</html>
